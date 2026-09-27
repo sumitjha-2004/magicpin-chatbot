@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vera — Business Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="logo">V</div>
+
+            <div>
+                <h2>Vera</h2>
+                <p>Business Assistant</p>
+            </div>
+        </div>
+
+        <button class="new-chat" onclick="newConversation()">
+            + New Conversation
+        </button>
+
+        <div class="sidebar-section">
+            <p class="section-title">Quick Scenarios</p>
+
+            <button class="scenario-btn" onclick="selectScenario('appointment')">
+                📅 Appointment
+            </button>
+
+            <button class="scenario-btn" onclick="selectScenario('customer')">
+                👤 Customer Re-engagement
+            </button>
+
+            <button class="scenario-btn" onclick="selectScenario('performance')">
+                📊 Performance
+            </button>
+        </div>
+
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            Vera is online
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CHAT -->
+    <main class="chat-container">
+
+        <!-- HEADER -->
+        <header class="chat-header">
+
+            <div class="assistant-info">
+
+                <div class="avatar">
+                    V
+                </div>
+
+                <div>
+                    <h3>Vera</h3>
+
+                    <span>
+                        <span class="online-dot"></span>
+                        Online
+                    </span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- MESSAGES -->
+        <section id="chatMessages" class="messages">
+
+            <div class="welcome">
+
+                <div class="welcome-icon">
+                    👋
+                </div>
+
+                <h1>Hi, I'm Vera</h1>
+
+                <p>
+                    I'm your business assistant.
+                    How can I help you today?
+                </p>
+
+                <div class="welcome-options">
+
+                    <button onclick="selectScenario('appointment')">
+                        📅 Manage appointment
+                    </button>
+
+                    <button onclick="selectScenario('customer')">
+                        👤 Re-engage customer
+                    </button>
+
+                    <button onclick="selectScenario('performance')">
+                        📊 Check performance
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TYPING INDICATOR -->
+        <div id="typingIndicator" class="typing hidden">
+
+            <div class="typing-avatar">
+                V
+            </div>
+
+            <div class="typing-bubble">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- INPUT -->
+        <footer class="input-area">
+
+            <div id="quickReplies" class="quick-replies"></div>
+
+            <div class="input-container">
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Type your message..."
+                    rows="1"
+                    onkeydown="handleKeyDown(event)"
+                ></textarea>
+
+                <button
+                    id="sendButton"
+                    onclick="sendMessage()"
+                    aria-label="Send message"
+                >
+                    ➤
+                </button>
+
+            </div>
+
+            <p class="input-hint">
+                Press Enter to send · Shift + Enter for a new line
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
