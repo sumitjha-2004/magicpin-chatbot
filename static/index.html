@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,50 +14,119 @@
 
 <div class="app">
 
-    <!-- SIDEBAR -->
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
     <aside class="sidebar">
 
+        <!-- BRAND -->
+
         <div class="brand">
-            <div class="logo">V</div>
+
+            <div class="logo">
+                V
+            </div>
 
             <div>
                 <h2>Vera</h2>
                 <p>Business Assistant</p>
             </div>
+
         </div>
+
+
+        <!-- NEW CONVERSATION -->
 
         <button class="new-chat" onclick="newConversation()">
             + New Conversation
         </button>
 
-        <div class="sidebar-section">
-            <p class="section-title">Quick Scenarios</p>
 
-            <button class="scenario-btn" onclick="selectScenario('appointment')">
+        <!-- QUICK SCENARIOS -->
+
+        <div class="sidebar-section">
+
+            <p class="section-title">
+                Quick Scenarios
+            </p>
+
+            <button
+                class="scenario-btn"
+                onclick="selectScenario('appointment')"
+            >
                 📅 Appointment
             </button>
 
-            <button class="scenario-btn" onclick="selectScenario('customer')">
+            <button
+                class="scenario-btn"
+                onclick="selectScenario('customer')"
+            >
                 👤 Customer Re-engagement
             </button>
 
-            <button class="scenario-btn" onclick="selectScenario('performance')">
+            <button
+                class="scenario-btn"
+                onclick="selectScenario('performance')"
+            >
                 📊 Performance
             </button>
+
         </div>
 
+
+        <!-- SIDEBAR FOOTER -->
+
         <div class="sidebar-footer">
-            <span class="status-dot"></span>
-            Vera is online
+
+            <div class="developer-credit">
+
+                <p class="made-by">
+                    Made by <strong>Sumit Jha</strong>
+                </p>
+
+                <a
+                    href="mailto:sumitjha23ep099@dtu.ac.in"
+                    class="developer-email"
+                >
+                    sumitjha23ep099@dtu.ac.in
+                </a>
+
+                <a
+                    href="https://github.com/sumitjha-2004"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="github-link"
+                >
+                    GitHub ↗
+                </a>
+
+            </div>
+
+            <div class="online-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    Vera is online
+                </span>
+
+            </div>
+
         </div>
 
     </aside>
 
 
-    <!-- MAIN CHAT -->
+    <!-- =========================
+         MAIN CHAT
+    ========================== -->
+
     <main class="chat-container">
 
+
         <!-- HEADER -->
+
         <header class="chat-header">
 
             <div class="assistant-info">
@@ -66,12 +136,16 @@
                 </div>
 
                 <div>
-                    <h3>Vera</h3>
+
+                    <h3>
+                        Vera
+                    </h3>
 
                     <span>
                         <span class="online-dot"></span>
                         Online
                     </span>
+
                 </div>
 
             </div>
@@ -79,8 +153,16 @@
         </header>
 
 
-        <!-- MESSAGES -->
-        <section id="chatMessages" class="messages">
+        <!-- =========================
+             MESSAGES
+        ========================== -->
+
+        <section
+            id="chatMessages"
+            class="messages"
+        >
+
+            <!-- WELCOME -->
 
             <div class="welcome">
 
@@ -88,24 +170,35 @@
                     👋
                 </div>
 
-                <h1>Hi, I'm Vera</h1>
+                <h1>
+                    Hi, I'm Vera
+                </h1>
 
                 <p>
                     I'm your business assistant.
                     How can I help you today?
                 </p>
 
+
+                <!-- WELCOME OPTIONS -->
+
                 <div class="welcome-options">
 
-                    <button onclick="selectScenario('appointment')">
+                    <button
+                        onclick="selectScenario('appointment')"
+                    >
                         📅 Manage appointment
                     </button>
 
-                    <button onclick="selectScenario('customer')">
+                    <button
+                        onclick="selectScenario('customer')"
+                    >
                         👤 Re-engage customer
                     </button>
 
-                    <button onclick="selectScenario('performance')">
+                    <button
+                        onclick="selectScenario('performance')"
+                    >
                         📊 Check performance
                     </button>
 
@@ -116,26 +209,46 @@
         </section>
 
 
-        <!-- TYPING INDICATOR -->
-        <div id="typingIndicator" class="typing hidden">
+        <!-- =========================
+             TYPING INDICATOR
+        ========================== -->
+
+        <div
+            id="typingIndicator"
+            class="typing hidden"
+        >
 
             <div class="typing-avatar">
                 V
             </div>
 
             <div class="typing-bubble">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </div>
 
         </div>
 
 
-        <!-- INPUT -->
+        <!-- =========================
+             INPUT AREA
+        ========================== -->
+
         <footer class="input-area">
 
-            <div id="quickReplies" class="quick-replies"></div>
+
+            <!-- QUICK REPLIES -->
+
+            <div
+                id="quickReplies"
+                class="quick-replies"
+            ></div>
+
+
+            <!-- INPUT -->
 
             <div class="input-container">
 
@@ -146,6 +259,7 @@
                     onkeydown="handleKeyDown(event)"
                 ></textarea>
 
+
                 <button
                     id="sendButton"
                     onclick="sendMessage()"
@@ -155,6 +269,9 @@
                 </button>
 
             </div>
+
+
+            <!-- INPUT HINT -->
 
             <p class="input-hint">
                 Press Enter to send · Shift + Enter for a new line
@@ -167,7 +284,10 @@
 </div>
 
 
+<!-- JAVASCRIPT -->
+
 <script src="/static/script.js"></script>
 
 </body>
+
 </html>
